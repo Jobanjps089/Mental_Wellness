@@ -20,11 +20,109 @@
             align-items: center;
             padding: 20px;
             animation: backgroundShift 10s ease-in-out infinite;
+            position: relative;
         }
 
         @keyframes backgroundShift {
             0%, 100% { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
             50% { background: linear-gradient(135deg, #764ba2 0%, #667eea 100%); }
+        }
+
+        .developer-info {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 16px;
+            padding: 20px;
+            max-width: 280px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            animation: slideInRight 0.8s ease-out 0.3s both;
+            z-index: 1000;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .developer-info:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2), 0 0 0 1px rgba(255,255,255,0.1);
+        }
+
+        .developer-header {
+            font-weight: 700;
+            color: #2d3748;
+            font-size: 16px;
+            margin-bottom: 15px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+
+        .developer-details {
+            color: #4a5568;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .developer-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            padding: 8px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .developer-item:hover {
+            background: rgba(102, 126, 234, 0.1);
+            transform: translateX(3px);
+        }
+
+        .developer-label {
+            font-weight: 600;
+            color: #2d3748;
+            min-width: 50px;
+        }
+
+        .developer-value {
+            color: #4a5568;
+            flex: 1;
+        }
+
+        .developer-icon {
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            font-size: 12px;
+            animation: iconPulse 2s infinite ease-in-out;
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         .container {
@@ -367,6 +465,22 @@
             h1 {
                 font-size: 24px;
             }
+
+            .developer-info {
+                position: static;
+                margin-bottom: 20px;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .developer-info {
+                top: 10px;
+                right: 10px;
+                left: 10px;
+                max-width: calc(100% - 20px);
+                position: fixed;
+            }
         }
 
         .form-enter {
@@ -456,18 +570,31 @@
                 transform: translateX(0);
             }
         }
-
-        @media (max-width: 768px) {
-            .info-window {
-                bottom: 10px;
-                left: 10px;
-                right: 10px;
-                max-width: calc(100% - 20px);
-            }
-        }
     </style>
 </head>
 <body>
+    <!-- Developer Information Panel -->
+    <div class="developer-info">
+        <div class="developer-header">Developer Information</div>
+        <div class="developer-details">
+            <div class="developer-item">
+                <div class="developer-icon">👨‍💻</div>
+                <div class="developer-label">Name:</div>
+                <div class="developer-value">Jobanpreet Singh</div>
+            </div>
+            <div class="developer-item">
+                <div class="developer-icon">📱</div>
+                <div class="developer-label">Contact:</div>
+                <div class="developer-value">9872907367</div>
+            </div>
+            <div class="developer-item">
+                <div class="developer-icon">✉️</div>
+                <div class="developer-label">E-mail:</div>
+                <div class="developer-value">sjoban4336@gmail.com</div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <div class="header">
             <h1>Mental Wellness Predictor</h1>
