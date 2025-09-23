@@ -54,16 +54,20 @@
             color: #2d3748;
             font-size: 16px;
             margin-bottom: 15px;
-            text-align: center;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
             border-bottom: 2px solid #e2e8f0;
             padding-bottom: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        .developer-header-title {
+            flex: 1;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .developer-details {
@@ -576,22 +580,23 @@
         }
 
         .close-btn {
-            background: rgba(160, 174, 192, 0.1);
-            border: 1px solid rgba(160, 174, 192, 0.2);
-            font-size: 16px;
+            background: rgba(229, 62, 62, 0.1);
+            border: 2px solid rgba(229, 62, 62, 0.3);
+            font-size: 18px;
             font-weight: bold;
-            color: #718096;
+            color: #e53e3e;
             cursor: pointer;
-            padding: 4px;
+            padding: 0;
             border-radius: 50%;
-            width: 26px;
-            height: 26px;
+            width: 28px;
+            height: 28px;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
             position: relative;
             flex-shrink: 0;
+            line-height: 1;
         }
 
         .close-btn:hover {
@@ -599,7 +604,11 @@
             background: #e53e3e;
             border-color: #e53e3e;
             transform: scale(1.15);
-            box-shadow: 0 2px 8px rgba(229, 62, 62, 0.3);
+            box-shadow: 0 4px 12px rgba(229, 62, 62, 0.4);
+        }
+
+        .close-btn:active {
+            transform: scale(1.05);
         }
 
         .close-btn:active {
@@ -607,15 +616,17 @@
         }
 
         .panel-hidden {
-            opacity: 0;
-            transform: translateX(100%);
+            opacity: 0 !important;
+            transform: translateX(100%) !important;
             pointer-events: none;
+            transition: all 0.5s ease !important;
         }
 
         .info-hidden {
-            opacity: 0;
-            transform: translateX(-100%);
+            opacity: 0 !important;
+            transform: translateX(-100%) !important;
             pointer-events: none;
+            transition: all 0.5s ease !important;
         }
 
         .developer-header-title {
@@ -629,7 +640,7 @@
     <div class="developer-info" id="developerInfo">
         <div class="developer-header">
             <div class="developer-header-title">Developer Information</div>
-            <button class="close-btn" onclick="closeDeveloperInfo()" title="Close">×</button>
+            <button class="close-btn" id="closeDeveloperBtn" title="Close Panel">×</button>
         </div>
         <div class="developer-details">
             <div class="developer-item">
@@ -738,7 +749,7 @@
                 <span>💡</span>
                 <span>Wellness Guide</span>
             </div>
-            <button class="close-btn" onclick="closeInfoWindow()" title="Close">×</button>
+            <button class="close-btn" id="closeInfoBtn" title="Close Guide">×</button>
         </div>
         <div class="info-content">
             If your score is near 100 your Mental Wellness is good and if it is not near then you have to work on your screen time and sleep.
@@ -868,15 +879,48 @@
             });
         });
 
-        // Functions to close panels
+        // Add event listeners for close buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            // Close developer info panel
+            const closeDeveloperBtn = document.getElementById('closeDeveloperBtn');
+            if (closeDeveloperBtn) {
+                closeDeveloperBtn.addEventListener('click', function() {
+                    console.log('Closing developer info...');
+                    const developerInfo = document.getElementById('developerInfo');
+                    if (developerInfo) {
+                        developerInfo.classList.add('panel-hidden');
+                    }
+                });
+            }
+
+            // Close info window
+            const closeInfoBtn = document.getElementById('closeInfoBtn');
+            if (closeInfoBtn) {
+                closeInfoBtn.addEventListener('click', function() {
+                    console.log('Closing info window...');
+                    const infoWindow = document.getElementById('infoWindow');
+                    if (infoWindow) {
+                        infoWindow.classList.add('info-hidden');
+                    }
+                });
+            }
+        });
+
+        // Functions to close panels (backup methods)
         function closeDeveloperInfo() {
+            console.log('Backup close developer info...');
             const developerInfo = document.getElementById('developerInfo');
-            developerInfo.classList.add('panel-hidden');
+            if (developerInfo) {
+                developerInfo.classList.add('panel-hidden');
+            }
         }
 
         function closeInfoWindow() {
+            console.log('Backup close info window...');
             const infoWindow = document.getElementById('infoWindow');
-            infoWindow.classList.add('info-hidden');
+            if (infoWindow) {
+                infoWindow.classList.add('info-hidden');
+            }
         }
     </script>
 </body>
