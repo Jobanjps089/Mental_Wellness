@@ -70,6 +70,25 @@
             background-clip: text;
         }
 
+        .input-note {
+            margin-top: 8px;
+            padding: 8px 12px;
+            background: rgba(102, 126, 234, 0.1);
+            border-left: 3px solid #667eea;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #4a5568;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        .note-icon {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
         .developer-details {
             color: #4a5568;
             font-size: 14px;
@@ -704,6 +723,10 @@
                            placeholder="Work Screen Time (hours)" 
                            required>
                     <div class="input-icon">💻</div>
+                </div>
+                <div class="input-note">
+                    <span class="note-icon">ℹ️</span>
+                    Work Screen Time should be below or equal to Daily Screen Time
                 </div>
             </div>
 
