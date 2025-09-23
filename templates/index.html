@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mental Wellness Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+            width: 350px;
+            text-align: center;
+        }
+        h2 { color: #333; margin-bottom: 20px; }
+        input[type="number"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 12px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        button:hover { background: #45a049; }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Mental Wellness Predictor</h2>
+        <form method="POST">
+            <input type="number" step="0.1" name="screen_time" placeholder="Screen Time (hours)" required>
+            <input type="number" step="0.1" name="sleep_hours" placeholder="Sleep Hours" required>
+            <input type="number" step="0.1" name="work_screen" placeholder="Work Screen Hours" required>
+            <br>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction is not none %}
+            <div class="result">
+                Predicted Mental Wellness Index: {{ prediction }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
