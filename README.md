@@ -1,7 +1,7 @@
 # Mental Wellness Prediction System
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Hugging%20Face-yellow)](https://jobanjps-Mental_Wellness.hf.space)
-[![Notebook](https://img.shields.io/badge/Notebook-Google%20Colab-blue)](https://colab.research.google.com/drive/mental_wellness.ipynb)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Hugging%20Face-yellow)](https://huggingface.co/spaces/Jobanjps/Mental_Wellness)
+[![Notebook](https://img.shields.io/badge/Notebook-Google%20Colab-blue)](https://colab.research.google.com/drive/1MwHbFQsmL1PuD_epcWl6xjQEBdbEThDX#scrollTo=a54c4c28)
 [![GitHub](https://img.shields.io/badge/Source-GitHub-black)](https://github.com/Jobanjps089/Mental_Wellness)
 
 A machine learning-powered web application that predicts mental wellness scores based on lifestyle factors including screen time, sleep patterns, and work-related screen exposure. This project leverages data science techniques to provide insights into how daily habits impact mental well-being.
