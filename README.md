@@ -1,6 +1,6 @@
 # Mental Wellness Prediction System
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Hugging%20Face-yellow)](https://huggingface.co/spaces/Jobanjps/Mental_Wellness)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Hugging%20Face-yellow)](https://huggingface.co/spaces/Jobanjps/Mental-Wellness)
 [![Notebook](https://img.shields.io/badge/Notebook-Google%20Colab-blue)](https://colab.research.google.com/drive/1MwHbFQsmL1PuD_epcWl6xjQEBdbEThDX#scrollTo=a54c4c28)
 [![GitHub](https://img.shields.io/badge/Source-GitHub-black)](https://github.com/Jobanjps089/Mental_Wellness)
 
